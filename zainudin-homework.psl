@@ -1,7 +1,4 @@
--- =========================================
 -- 1. Rectangle Area Program
--- File: rectangle_area.sql
--- =========================================
 
 DECLARE
     length NUMBER := 10;
@@ -13,5 +10,223 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('Length: ' || length);
     DBMS_OUTPUT.PUT_LINE('Width: ' || width);
     DBMS_OUTPUT.PUT_LINE('Rectangle Area: ' || area);
-END;
+end;
+
+
+
+
+
+-- 2. Find the Average of Three Numbers
+
+
+DECLARE
+    num1 NUMBER := 10;
+    num2 NUMBER := 20;
+    num3 NUMBER := 30;
+    avg_result NUMBER;
+BEGIN
+    avg_result := (num1 + num2 + num3) / 3;
+
+    DBMS_OUTPUT.PUT_LINE('Average: ' || avg_result);
+end;
+
+
+
+
+-- 3. Square Area Program
+
+
+DECLARE
+    side NUMBER := 4;
+    area NUMBER;
+BEGIN
+    area := side * side;
+
+    DBMS_OUTPUT.PUT_LINE('Square Area: ' || area);
+end;
+
+
+
+-- 4. Find the Largest Number among Three Numbers
+
+
+DECLARE
+    num1 NUMBER := 15;
+    num2 NUMBER := 45;
+    num3 NUMBER := 25;
+BEGIN
+    IF num1 >= num2 AND num1 >= num3 THEN
+        DBMS_OUTPUT.PUT_LINE('Largest Number: ' || num1);
+
+    ELSIF num2 >= num1 AND num2 >= num3 THEN
+        DBMS_OUTPUT.PUT_LINE('Largest Number: ' || num2);
+
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('Largest Number: ' || num3);
+    END IF;
+end;
+
+
+
+
+-- 5. Find the Smallest Number among Three Numbers
+
+
+DECLARE
+    num1 NUMBER := 15;
+    num2 NUMBER := 45;
+    num3 NUMBER := 25;
+BEGIN
+    IF num1 <= num2 AND num1 <= num3 THEN
+        DBMS_OUTPUT.PUT_LINE('Smallest Number: ' || num1);
+
+    ELSIF num2 <= num1 AND num2 <= num3 THEN
+        DBMS_OUTPUT.PUT_LINE('Smallest Number: ' || num2);
+
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('Smallest Number: ' || num3);
+    END IF;
+end;
 /
+
+
+
+-- 6. Even and Odd Number Program
+
+
+DECLARE
+    num NUMBER := 8;
+BEGIN
+    IF MOD(num, 2) = 0 THEN
+        DBMS_OUTPUT.PUT_LINE(num || ' is Even');
+
+    ELSE
+        DBMS_OUTPUT.PUT_LINE(num || ' is Odd');
+    END IF;
+end;
+
+
+
+
+-- 7. Simple Calculator Program
+
+
+DECLARE
+    num1 NUMBER := 20;
+    num2 NUMBER := 10;
+
+    addition       NUMBER;
+    subtraction    NUMBER;
+    multiplication NUMBER;
+    division       NUMBER;
+BEGIN
+    addition := num1 + num2;
+    subtraction := num1 - num2;
+    multiplication := num1 * num2;
+    division := num1 / num2;
+
+    DBMS_OUTPUT.PUT_LINE('Addition: ' || addition);
+    DBMS_OUTPUT.PUT_LINE('Subtraction: ' || subtraction);
+    DBMS_OUTPUT.PUT_LINE('Multiplication: ' || multiplication);
+    DBMS_OUTPUT.PUT_LINE('Division: ' || division);
+end;
+
+
+
+-- 8. Celsius to Fahrenheit Conversion Program
+
+
+DECLARE
+    celsius NUMBER := 25;
+    fahrenheit NUMBER;
+BEGIN
+    fahrenheit := (celsius * 9/5) + 32;
+
+    DBMS_OUTPUT.PUT_LINE('Temperature in Fahrenheit: ' || fahrenheit);
+end;
+
+
+
+-- 9. Student Grade Calculation Program
+
+
+DECLARE
+    marks NUMBER := 85;
+    grade VARCHAR2(2);
+BEGIN
+    IF marks >= 90 THEN
+        grade := 'A';
+
+    ELSIF marks >= 80 THEN
+        grade := 'B';
+
+    ELSIF marks >= 70 THEN
+        grade := 'C';
+
+    ELSIF marks >= 60 THEN
+        grade := 'D';
+
+    ELSE
+        grade := 'F';
+    END IF;
+
+    DBMS_OUTPUT.PUT_LINE('Marks: ' || marks);
+    DBMS_OUTPUT.PUT_LINE('Grade: ' || grade);
+end;
+
+
+
+
+-- 10. Find the Sum from 1 to 100
+
+
+DECLARE
+    total NUMBER := 0;
+BEGIN
+    FOR i IN 1..100 LOOP
+        total := total + i;
+    END LOOP;
+
+    DBMS_OUTPUT.PUT_LINE('Sum from 1 to 100: ' || total);
+end;
+
+
+
+
+-- 11. Find the Factorial of a Number
+
+
+DECLARE
+    num NUMBER := 5;
+    fact NUMBER := 1;
+BEGIN
+    FOR i IN 1..num LOOP
+        fact := fact * i;
+    END LOOP;
+
+    DBMS_OUTPUT.PUT_LINE('Factorial of ' || num || ' is: ' || fact);
+end;
+
+
+
+-- 12. Electricity Bill Calculation Program
+
+
+DECLARE
+    units NUMBER := 120;
+    bill NUMBER;
+BEGIN
+    IF units <= 100 THEN
+        bill := units * 5;
+
+    ELSIF units <= 200 THEN
+        bill := (100 * 5) + ((units - 100) * 8);
+
+    ELSE
+        bill := (100 * 5) + (100 * 8) + ((units - 200) * 10);
+    END IF;
+
+    DBMS_OUTPUT.PUT_LINE('Electricity Bill: ' || bill);
+end;
+
+
